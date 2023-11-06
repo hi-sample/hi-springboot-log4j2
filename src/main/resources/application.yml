@@ -1,0 +1,19 @@
+#debug: true
+
+server:
+  #default port 8080
+  port: 8989
+
+spring:
+  application:
+    name: hi-springboot-log4j2
+
+logging:
+  file:
+    path: logs/${spring.application.name}
+  #自定义配置
+  log4j2:
+    level: info
+    max-file-size: 10MB
+    max-history: 7
+
