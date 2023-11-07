@@ -2,6 +2,7 @@ package net.hifor.demo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.async.AsyncLoggerContextSelector;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,5 +24,7 @@ public class HiSpringbootApplication implements ApplicationRunner {
         logger.warn("Hey, This is a warning!");
         logger.error("Oops! We have an Error. OK");
         logger.fatal("Damn! Fatal error. Please fix me.");
+
+        logger.info("是否为异步日志：{}", AsyncLoggerContextSelector.isSelected());
     }
 }
