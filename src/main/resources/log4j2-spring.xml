@@ -33,7 +33,8 @@
         </Console>
 
         <!-- debug级别日志文件 -->
-        <RollingRandomAccessFile name="app_debug" fileName="${filePath}/debug/debug.log"
+        <!--immediateFlush 默认为true, false表示使用缓存，不立即写入文本，需与异步日志配合使用提高性能-->
+        <RollingRandomAccessFile name="app_debug" fileName="${filePath}/debug/debug.log" immediateFlush="false"
                      filePattern="${filePath}/debug/debug-%d{yyyy-MM-dd}-%i.log.gz">
             <!--日志滚动压缩数量，默认为7-->
             <DefaultRolloverStrategy max="${maxHistory}"/>
