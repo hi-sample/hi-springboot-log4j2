@@ -14,8 +14,10 @@
         <property name="maxHistory">${spring:logging.log4j2.max-history}</property>
         <!-- 日志文件输出级别 -->
         <property name="logLevel">${spring:logging.log4j2.level}</property>
+        <!-- immediateFlush 默认为true, false表示使用缓存，不立即写入文本，需与异步日志配合使用提高性能-->
+        <property name="immediateFlush">${spring:logging.log4j2.immediateFlush}</property>
         <!-- 日志输出格式 -->
-<!--        <property name="logPattern">%d %p %class{1.} [%t] %location %m %ex%n</property>-->
+        <!--<property name="logPattern">%d %p %class{1.} [%t] %location %m %ex%n</property>-->
         <property name="logPattern">%d{yyyy-MM-dd HH:mm:ss.SSS z} %-5level [%t] %C{1.}: %msg%xEx%n</property>
         <!-- 控制台输出彩色格式，与logback风格一致 -->
         <property name="consolePattern">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n%xwEx</property>
@@ -25,7 +27,7 @@
     <!--先定义所有的appender -->
     <Appenders>
         <!--这个输出控制台的配置 -->
-        <Console name="Console" target="SYSTEM_OUT" immediateFlush="false">
+        <Console name="Console" target="SYSTEM_OUT" immediateFlush="true">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
             <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
             <!--输出日志的格式 -->
@@ -33,7 +35,8 @@
         </Console>
 
         <!-- debug级别日志文件 -->
-        <RollingRandomAccessFile name="app_debug" fileName="${filePath}/debug/debug.log"
+        <!--immediateFlush 默认为true, false表示使用缓存，不立即写入文本，需与异步日志配合使用提高性能-->
+        <RollingRandomAccessFile name="app_debug" fileName="${filePath}/debug/debug.log" immediateFlush="${immediateFlush}"
                      filePattern="${filePath}/debug/debug-%d{yyyy-MM-dd}-%i.log.gz">
             <!--日志滚动压缩数量，默认为7-->
             <DefaultRolloverStrategy max="${maxHistory}"/>
@@ -50,7 +53,7 @@
         </RollingRandomAccessFile>
 
         <!-- 记录info以上级别日志文件 -->
-        <RollingRandomAccessFile name="app_info" fileName="${filePath}/info/info.log" immediateFlush="false"
+        <RollingRandomAccessFile name="app_info" fileName="${filePath}/info/info.log" immediateFlush="${immediateFlush}"
                      filePattern="${filePath}/info/info-%d{yyyy-MM-dd}-%i.log.gz">
             <!--日志滚动压缩数量，默认为7-->
             <DefaultRolloverStrategy max="${maxHistory}"/>
@@ -65,7 +68,7 @@
         </RollingRandomAccessFile>
 
         <!-- 记录warn以上级别日志文件 -->
-        <RollingRandomAccessFile name="app_error" fileName="${filePath}/error/error.log" immediateFlush="false"
+        <RollingRandomAccessFile name="app_error" fileName="${filePath}/error/error.log" immediateFlush="${immediateFlush}"
                      filePattern="${filePath}/error/error-%d{yyyy-MM-dd}-%i.log.gz">
             <!--日志滚动压缩数量，默认为7-->
             <DefaultRolloverStrategy max="${maxHistory}"/>
