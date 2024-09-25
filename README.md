@@ -9,6 +9,10 @@ hi-springboot-log4j2 是一个专注于展示如何在 Spring Boot 项目中使�
 2. log4j2-spring.xml配置参数支持引用application.yml
 3. 启用log4j2异步，提高日志性能
 
+
+
+### 异步日志
+
 - 如何判断log4j2异步日志是否生效
 
 1. 本项目运行后会输出日志
@@ -21,7 +25,9 @@ hi-springboot-log4j2 是一个专注于展示如何在 Spring Boot 项目中使�
 
 2. 使用Java VisualVM等内存分析工具查看
 
-![image-20240719090349777](assets/README/image-20240719090349777.png)
+![image-20240719090349777](assets/README/image-20240719090349777.png) 
+
+
 
 
 ## version
@@ -30,6 +36,8 @@ hi-springboot-log4j2 是一个专注于展示如何在 Spring Boot 项目中使�
 - spring boot 2.7.17
 - log4j2 2.17.2
 - disruptor 3.4.4
+
+
 
 ## reference
 
