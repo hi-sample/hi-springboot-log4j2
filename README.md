@@ -28,6 +28,13 @@ hi-springboot-log4j2 是一个专注于展示如何在 Spring Boot 项目中使�
 ![image-20240719090349777](assets/README/image-20240719090349777.png) 
 
 
+## branch
+
+| Branch      | JDK    | SpringBoot | Log4j2  |
+| ----------- | ------ | ---------- | ------- |
+| main        | 21 LTS | 3.3.4      | 2.23.11 |
+| springboot2 | 11 LTS | 2.7.17     | 2.17.2  |
+
 
 
 ## version
