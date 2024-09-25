@@ -92,12 +92,6 @@
             <AppenderRef ref="app_info" />
             <AppenderRef ref="app_error" />
         </Root>
-        <!--<AsyncLogger level="${logLevel}" includeLocation="true">
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="app_debug" />
-            <AppenderRef ref="app_info" />
-            <AppenderRef ref="app_error" />
-        </AsyncLogger>-->
     </Loggers>
 
 </Configuration>

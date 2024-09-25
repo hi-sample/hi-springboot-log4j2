@@ -31,10 +31,10 @@ hi-springboot-log4j2 是一个专注于展示如何在 Spring Boot 项目中使�
 
 
 ## version
-- JDK 11
-- gradle 6.9.4
-- spring boot 2.7.17
-- log4j2 2.17.2
+- openJDK 21
+- gradle 8.10.2
+- spring boot 3.3.4
+- log4j2 2.23.11
 - disruptor 3.4.4
 
 
@@ -43,7 +43,7 @@ hi-springboot-log4j2 是一个专注于展示如何在 Spring Boot 项目中使�
 
 - Spring Boot: Configure Log4j for Logging
 
-  https://docs.spring.io/spring-boot/docs/2.7.17/reference/htmlsingle/#howto.logging.log4j
+  https://docs.spring.io/spring-boot/how-to/logging.html#howto.logging.log4j.composite-configuration
 
 - Log4j: Spring Boot Support
 
